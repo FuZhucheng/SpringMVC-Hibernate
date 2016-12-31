@@ -1,0 +1,22 @@
+CREATE TABLE user(
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+nickname VARCHAR(45) NOT NULL,
+password VARCHAR(45) NOT NULL,
+first_name VARCHAR(45),
+last_name VARCHAR(45)
+);
+
+CREATE TABLE blog(
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+title VARCHAR(100),
+content VARCHAR(100),
+user_id INT(11) UNSIGNED,
+pub_date DATE
+);
+
+添加外键 user_id--id
+
+
+测试数据：
+INSERT INTO `t2`.`blog` (`title`, `content`, `user_id`, `pub_date`) VALUES ('发发发方法付', '发发发方法付付付', '1', '2016-12-29');
+INSERT INTO `t2`.`user` (`nickname`, `password`, `first_name`, `last_name`) VALUES ('fuzhu', '75111', 'fuzh', 'fuzhu');

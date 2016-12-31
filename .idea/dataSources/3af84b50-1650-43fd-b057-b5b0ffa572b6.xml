@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - t2@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="t2">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="test"/>
+    <table id="6" parent="1" name="blog"/>
+    <table id="7" parent="1" name="user"/>
+    <column id="8" parent="6" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="9" parent="6" name="title">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="10" parent="6" name="content">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="11" parent="6" name="user_id">
+      <data-type>int(11) unsigned|0</data-type>
+    </column>
+    <column id="12" parent="6" name="pub_date">
+      <data-type>date|0</data-type>
+    </column>
+    <index id="13" parent="6" name="user_id">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="14" parent="6" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="15" parent="6" name="user_id">
+      <columns>user_id</columns>
+      <ref-key>~.user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>no_action</cascade-delete-rule>
+    </foreign-key>
+    <column id="16" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="17" parent="7" name="nickname">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="18" parent="7" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="19" parent="7" name="first_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="20" parent="7" name="last_name">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <key id="21" parent="7" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
